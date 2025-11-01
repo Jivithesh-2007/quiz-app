@@ -1,0 +1,48 @@
+@include b("quizza")
+
+    --border-radius: #{$space_8}
+    --min-height-content: #{calculateRem(320px)}
+    --pad-box: #{$space_8}
+    --pad-content: #{$space_12} #{$space_20}
+
+    @include e("box")
+        padding: var(--pad-box)
+        background: #{$anti_flash}
+        border: 1px solid #{$light_grey}
+        border-radius: var(--border-radius)
+
+    @include e("content")
+        min-height: calculateRem(200px)
+        padding: var(--pad-content)
+        background: #{$light_grey}
+        border-radius: var(--border-radius)
+
+    @include e("nav")
+        padding: var(--pad-box)
+        background: #{$light_grey}
+        border-radius: var(--border-radius)
+
+    @include e("option")
+        display: flex
+        flex-wrap: nowrap
+        gap: #{$space_4}
+        align-items: center
+        font-size: calculateRem(14px)
+        color: #{$black38}
+        input[type="radio"]
+            background-color: #{$primary_50}
+            border: 1px solid #{$primary_200}
+            width: #{$space_16}
+            height: #{$space_16}
+            appearance: none
+            // margin-right: 4px
+            cursor: pointer
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+            border-radius: 50%
+            &:checked
+                background-image: var(--bg-image-radio)
+                border-color: #{$primary_400}
+                & + label
+                    color: #{$primary_400}
