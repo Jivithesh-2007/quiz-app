@@ -1,0 +1,34 @@
+@include b("progress")
+    --space-all: #{$space_4}
+    --fz-progress: #{calculateRem(12px)}
+    --lh-progress: #{calculateRem(18px)}
+    --height-progress: #{calculateRem(32px)}
+
+    position: relative
+    padding: var(--space-all)
+    border-radius: var(--space-all)
+    background: #{$light_grey}
+    height: var(--height-progress)
+    display: none
+
+    @include e("bar")
+        width: 0%
+        height: 100%
+        background: #{$primary_300}
+        border-radius: #{$space_4}
+
+    @include e("percent")
+        font-size: var(--fz-progress)
+        line-height: var(--lh-progress)
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+    @include e("steps")
+        position: absolute
+        right: #{$space_16}
+        top: 50%
+        font-size: var(--fz-progress)
+        line-height: var(--lh-progress)
+        transform: translateY(-50%)
