@@ -1,0 +1,25 @@
+@include b("container")
+    margin: #{$space_68} auto
+    max-width: #{$container}
+    @include for_screen("tablet", "max-w")
+        padding: 0 #{$space_20}
+
+@include b("header")
+    --logo-size: 100px
+    --nav-item-hover-bg: #{$light_grey}
+    --nav-item-active-bg: #{$primary_100}
+    --nav-item-active-color: #{$primary_500}
+
+    @include e("logo")
+        padding: #{$space_20}
+        background: var(--global-box-background)
+        border-radius: #{$space_32}
+        img
+            width: 100%
+            max-width: var(--logo-size)
+            display: block
+            object-fit: cover
+    @include e("socials")
+        padding: #{$space_20}
+        a
+            display: flex
